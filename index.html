@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLIS-4206 Accessibility Audit Report</title>
+    <!-- Bootstrap CSS Code -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<body>
+
+<!-- Main Container Div that provides padding -->
+<div class="container"> 
+<h1>Accessibility Testing on Lee County Libraries (LCL)</h1>
+
+<p>
+    Name: Jatana Smiley <br>
+    Class Project: Accessibility Testing For Lee County Libraries<br>
+    Website: <a href="https://library.leecountync.gov/home">https://library.leecountync.gov/home </a>  <br>
+    Date: January 28, 2024
+</p>
+
+
+<p>The purpose of this report is to help identify possible website digital accessibility issues in order to prevent any access issues to this website via assistive technologies. The following accessibility checklist is based on the <a href="https://www.w3.org/WAI/test-evaluate/preliminary/">W3C WAI Easy Checks – A First Review of Web Accessibility</a> I hope that you will find this report helpful and informative and find the recommendations to be actionable. </p>
+
+<h2>Accessibility Checklist</h2>
+<h3>Website Page Titles</h3>
+<p>In the web page markup, the <code>&lt;title&gt;</code> is within the <code>&lt;head&gt;</code> tag. Good page titles are particularly important for orientation, they help people know where they are and move between pages open in their browser tab. The first thing screen readers say when the user goes to a different web page is the page title.</p>
+
+<!-- red thumbs down css class -->
+<p class="alert alert-success" role="alert">Results: <i class="bi bi-hand-thumbs-up-fill"></i> 10 pages on the LCL website were evaluated for clear, unique HTML page titles. Each page has descriptive HTML title values. However, we do suggest that the title values have to be formatted as &quot;Page Title at LCL&quot;, for example, &quot;Summer Reading Program at LCL&quot; so that it's obvious to users using the assistive technologies what website page they are on. </p>
+
+<h3>Image Text Alternatives</h3>
+<p>Image text alternatives ("alt text") (pictures, illustrations, charts, etc.) Text alternatives convey the purpose of an image, including pictures, illustrations, charts, etc. The alt attribute provides an alternative text for an image, if the user for some reason cannot view it. The reason can be a slow connection, an error with the image file, or if the user uses a screen reader.</p>
+<!-- red thumbs down css class -->
+<p class="alert alert-danger" role="alert">Results: <i class="bi bi-hand-thumbs-down-fill"></i> Every photo on the homepage except for 1 is missing the alt text. The 1 image that has text is simply labelled as "schedule." None of the images on the Library Staff and Board Member page have alt text. This means that people using assistive technologies would not know what the photo or graphic is communicating. We recommend that all photos and graphics have descriptive alt text. </p>
+
+
+<h3>Text:</h3>
+ Headings, Contrast Ratio ("color contrast") and Resizing Text should not only support visual aesthetics but also support the navigation and visibility of text content.
+
+<p class="alert alert-danger" role="alert">Results - Headings  <i class="bi bi-hand-thumbs-down-fill"></i> 
+We tested the Homepage, Summer Reading page, and the  Book Clubs page. None of these pages have an H1 header tag. This means that screen readers would not have a way to orient the top of the page. Additionally, there are no other header tags used to indicate portions of the page. There are 3 H4 tags being used at the bottom of the page in a stylized manner.</p>
+
+
+<div class="alert alert-danger" role="alert">
+<p>Results - Contrast Ratio  <i class="bi bi-hand-thumbs-down-fill"></i> We tested the Homepage, Summer Readgin page and Book Clubs page. The WAVE color contrast tester flagged several portions of the pages as color contrast issues due to low contrast. The "More Search Tools" are a blue font on a white background. The footer consists of a black background with blue font. The low contrast can make it difficult for someone with a visual impairment to navigate the page. Suggestion is to change the color of the font and backgrounds to improve the level of contrast.</p>
+</div>
+
+<div class="alert alert-success" role="alert">
+<p>Results - Resizing Text  <i class="bi bi-hand-thumbs-up-fill"></i>The LCL website scales up text size using keyboard commands very well. Text was increased to 200% and readability remained comprehensible on a desktop and iPhone.</p>
+</div>
+
+ <h3>Interaction:</h3>
+ <h4>Keyboard access and visual focus </h4>  
+ <p>Many people cannot use a mouse and rely on a keyboard to interact with web pages. Keyboard focus should be clearly visible and should follow a logical order through the page elements. Visible keyboard focus could be a border or highlight. </p>
+<!-- red success div -->
+ <div class="alert alert-danger" role="alert">
+<p>Results: <i class="bi bi-hand-thumbs-down-fill"></i> Using only keyboard keys to navigate the LCL website was very difficult. There was no <a href="https://www.w3schools.com/accessibility/accessibility_skip_links.php">Skip to Main</a> feature that allows keyword users to quickly skip to the main content section. Furthermore, Keyboard Focus was not obvious to us when we were using our tab and arrow keys. Only a portion of the page was indicated when that section was tabbed over. We recommend that the web team explore to make the LCL website more keyboard-only friendly.</p>
+</div>
+
+
+<h4>Forms, labels, and errors (including Search fields): </h4>
+Users are able to keyboard navigate to the different forms fields. 
+Each form control has a label element with a for attribute that matches the value of the id attribute in the related control. For example:
+<ul>
+    <li>Each form control has a <code>label</code> element with a <code>for</code> attribute that  matches the value of the <code>id</code> attribute in the related control. For example:<br>
+        <code>&lt;label for="firstname"&gt;First name: &lt;/label&gt;<br>
+        &lt;input type="text" name="firstname" id="firstname" /&gt;<br>
+        </code> </li>
+        <li>Each <code>id</code> is unique within the web page.</li>
+</ul>
+<div class="alert alert-warning" role="alert">
+<p>Results <i class="bi bi-hand-thumbs-up-fill"></i> <i class="bi bi-hand-thumbs-down-fill"></i>
+    We tested the Make a Payment page because it has a form. 
+    Using only the keyboard, we were able to go to each form field and press submit. 
+    However, the <a href="https://swp.paymentsgateway.net/co/default.aspx?pg_api_login_id=D8FA08E5A4">Make a Payment</a> page has a web form that contains titles but does not have labels with a related unique ID.</p>
+</div>
+
+
+ <h3>General:</h3>
+ <p>Moving, Flashing, or Blinking Content: Moving, flashing, or blinking content includes carousels (example carousel), ads, videos, auto-updating stock tickers, scrolling news feeds, and more. 
+    Users need to be able to control moving content, especially some people with attention deficit disorder or visual processing disorders.</p>
+ 
+ <div class="alert alert-warning" role="alert">
+ <p>Results: <i class="bi bi-hand-thumbs-down-fill"></i><i class="bi bi-hand-thumbs-up-fill"></i> The LCL has an image carousel on the homepage that does not allow the user to stop the moving of images. 
+    The image gallery is not keyboard friendly. 
+    None of the photos have meaningful alt text. We recommend that the current image carousel is replaced with an <a href="https://www.w3.org/WAI/tutorials/carousels/">accessible image carousel</a>. No blinking or flashing content was located on the LCL website.</p>
+</div>
+
+
+ <p>Multimedia (video, audio) closed captions and transcripts</p>
+ <div class="alert alert-success" role="alert">
+ <p>Results: <i class="bi bi-hand-thumbs-up-fill"></i> The LCL website does not contain any videos to test. </p>
+</div>
+
+ <p>Basic Structure Check: It helps you understand how some people "see" the web page differently. For this basic structure check, you look at the web page without images, styles, and layout.
+Web pages are often designed with multiple columns, sections, colors, and other visual aspects that help organize information for people who see the page in its default display. 
+However, some people do not see the page this way.</p>
+
+<div class="alert alert-danger" role="alert">
+<p>Results: <i class="bi bi-hand-thumbs-down-fill"></i> For this test, we used WAVE to remove all CSS styles in order to see the LCL website without any visual styling. We tested the Homepage and noticed that this page is heavy on graphics without alt text. Individuals using a screen reader would not be able to obtain any information from this page regarding your library or the services you provide.</p>
+</div>
+ 
+
+<h3>In Summary</h3>
+<p>Thank you for taking the time to review our findings. We believe that most of the issues mentioned here can be resolved. Included below are some helpful articles on web accessibility.</p>
+
+ <h2>Related Articles:</h2>
+ <ul>
+<li><a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">W3C Web Accessibility Initiative (WAI)</a></li>
+<li><a href="https://www.w3.org/WAI/standards-guidelines/">W3C Accessibility Standards Overview</a></li>
+<li><a href="https://wave.webaim.org/">WAVE Web Accessibility Evaluation Tool</a></li>
+<li><a href="https://adata.org/ocr-videos">The U.S. Department of Education’s Office for Civil Rights – Video Series</a></li>
+<li><a href="https://www.w3.org/WAI/test-evaluate/">Evaluating Web Accessibility Overview</a></li>
+</ul>
+
+
+</div> 
+</body>
+</html>
